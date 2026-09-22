@@ -1,0 +1,9 @@
+injected 1 byte -> 127.0.0.1:57832
+process exited after rescue
+--- repro output:
+pid=12224 mode=lie(spurious-readable) libslirp=4.7.0
+injected fake guest UDP datagram -> udp_attach created host socket
+pollfds_fill registered 1 fd(s): [fd=3 events=0x19]
+calling slirp_pollfds_poll(get_revents=LIE) ...
+slirp_pollfds_poll RETURNED (no hang)
+exit=0

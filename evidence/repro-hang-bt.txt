@@ -1,0 +1,9 @@
+repro pid=12224
+#0  0x00007ffff7eabdb7 in __libc_recvfrom (fd=3, buf=0x55555556108c, len=1500, flags=0, addr=..., addrlen=0x7fffffffded8) at ../sysdeps/unix/sysv/linux/recvfrom.c:27
+#1  0x00007ffff7fa41c3 in ?? () from /lib/x86_64-linux-gnu/libslirp.so.0
+#2  0x00007ffff7fa4e44 in slirp_pollfds_poll () from /lib/x86_64-linux-gnu/libslirp.so.0
+#3  0x0000555555555bba in main (argc=2, argv=0x7fffffffea48) at slirp_repro.c:177
+--- UDP socket + fd flags:
+fd3 socket:[2313688508]
+  udp: 33226: 00000000:E1E8 00000000:0000 07 00000000:00000000 00:00000000 00000000     0        0 2313688508 2 ffff8cc97fc0d580 0    
+flags:	02000002

@@ -1,0 +1,233 @@
+[New LWP 9599]
+[New LWP 9593]
+[New LWP 9592]
+[New LWP 9591]
+[New LWP 9590]
+[New LWP 9589]
+[New LWP 9571]
+[New LWP 9565]
+[New LWP 9564]
+[New LWP 9563]
+[New LWP 9562]
+[New LWP 9561]
+[New LWP 9557]
+[New LWP 9555]
+[New LWP 9549]
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.ubuntu.com>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007ffff7640e04 in __libc_recvfrom (fd=27, buf=0x55555831f89c, len=1500, flags=0, addr=..., addrlen=0x7fffffffd838) at ../sysdeps/unix/sysv/linux/recvfrom.c:27
+
+Thread 16 (Thread 0x7ffff6e006c0 (LWP 9549) "qemu-system-x86"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x0000555555f571d2 in qemu_event_wait ()
+#2  0x0000555555f61c3e in call_rcu_thread ()
+#3  0x0000555555f55e70 in qemu_thread_start ()
+#4  0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#5  0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 15 (Thread 0x7ffff4c006c0 (LWP 9555) "qemu-system-x86"):
+#0  futex_wait (private=0, expected=2, futex_word=0x555556e1daa0 <bql>) at ../sysdeps/nptl/futex-internal.h:146
+#1  __GI___lll_lock_wait (futex=futex@entry=0x555556e1daa0 <bql>, private=0) at ./nptl/lowlevellock.c:49
+#2  0x00007ffff75b51e1 in lll_mutex_lock_optimized (mutex=0x555556e1daa0 <bql>) at ./nptl/pthread_mutex_lock.c:48
+#3  ___pthread_mutex_lock (mutex=0x555556e1daa0 <bql>) at ./nptl/pthread_mutex_lock.c:93
+#4  0x0000555555f55fed in qemu_mutex_lock_impl ()
+#5  0x0000555555b28e0f in bql_lock_impl ()
+#6  0x0000555555d086b1 in flatview_write ()
+#7  0x0000555555d0c8a9 in address_space_rw ()
+#8  0x0000555555d99860 in kvm_cpu_exec ()
+#9  0x0000555555d9af65 in kvm_vcpu_thread_fn ()
+#10 0x0000555555f55e70 in qemu_thread_start ()
+#11 0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#12 0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 14 (Thread 0x7fffef0006c0 (LWP 9557) "qemu-system-x86"):
+#0  futex_wait (private=0, expected=2, futex_word=0x555556e1daa0 <bql>) at ../sysdeps/nptl/futex-internal.h:146
+#1  __GI___lll_lock_wait (futex=futex@entry=0x555556e1daa0 <bql>, private=0) at ./nptl/lowlevellock.c:49
+#2  0x00007ffff75b51e1 in lll_mutex_lock_optimized (mutex=0x555556e1daa0 <bql>) at ./nptl/pthread_mutex_lock.c:48
+#3  ___pthread_mutex_lock (mutex=0x555556e1daa0 <bql>) at ./nptl/pthread_mutex_lock.c:93
+#4  0x0000555555f55fed in qemu_mutex_lock_impl ()
+#5  0x0000555555b28e0f in bql_lock_impl ()
+#6  0x0000555555d086b1 in flatview_write ()
+#7  0x0000555555d0c8a9 in address_space_rw ()
+#8  0x0000555555d99860 in kvm_cpu_exec ()
+#9  0x0000555555d9af65 in kvm_vcpu_thread_fn ()
+#10 0x0000555555f55e70 in qemu_thread_start ()
+#11 0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#12 0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 13 (Thread 0x7ffbe5a006c0 (LWP 9561) "qemu-system-x86"):
+#0  0x00007ffff75ade51 in __futex_abstimed_wait_common64 (private=<optimized out>, cancel=true, abstime=0x0, op=265, expected=0, futex_word=0x7ffff7fb5000) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=<optimized out>, abstime=0x0, clockid=0, expected=0, futex_word=0x7ffff7fb5000) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7ffff7fb5000, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=<optimized out>) at ./nptl/futex-internal.c:139
+#3  0x00007ffff75b9fff in do_futex_wait (sem=sem@entry=0x7ffff7fb5000, abstime=0x0, clockid=0) at ./nptl/sem_waitcommon.c:111
+#4  0x00007ffff75ba098 in __new_sem_wait_slow64 (sem=0x7ffff7fb5000, abstime=0x0, clockid=0) at ./nptl/sem_waitcommon.c:183
+#5  0x00007ffff5aa8a90 in ShmChiplibImpl::AcceptUpstreamFuncPayload() () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff5aa6258 in std::_Function_handler<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> (), std::__future_base::_Task_setter<std::unique_ptr<std::__future_base::_Result<void>, std::__future_base::_Result_base::_Deleter>, std::__future_base::_Task_state<std::_Bind<void (ShmChiplibImpl::*(ShmChiplibImpl*))()>, std::allocator<int>, void ()>::_M_run()::{lambda()#1}, void> >::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#7  0x00007ffff5aa6503 in std::__future_base::_State_baseV2::_M_do_set(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>*, bool*) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#8  0x00007ffff75b6fb3 in __pthread_once_slow (once_control=0x555557811758, init_routine=0x7ffff426d420 <__once_proxy>) at ./nptl/pthread_once.c:116
+#9  0x00007ffff5aa7080 in std::_Function_handler<void (), ThreadPool::enqueue<void (ShmChiplibImpl::*)(), ShmChiplibImpl*>(void (ShmChiplibImpl::*&&)(), ShmChiplibImpl*&&)::{lambda()#1}>::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#10 0x00007ffff5aa86df in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#11 0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#12 0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#13 0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 12 (Thread 0x7ffbe50006c0 (LWP 9562) "qemu-system-x86"):
+#0  0x00007ffff75ade51 in __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x555558b589b0) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x555558b589b0) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x555558b589b0, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ffff75b08cd in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x555558b58960, cond=0x555558b58988) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=0x555558b58988, mutex=0x555558b58960) at ./nptl/pthread_cond_wait.c:627
+#5  0x00007ffff5aa88bb in ShmChiplibImpl::Irq_handle_thread() () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff5aa6258 in std::_Function_handler<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> (), std::__future_base::_Task_setter<std::unique_ptr<std::__future_base::_Result<void>, std::__future_base::_Result_base::_Deleter>, std::__future_base::_Task_state<std::_Bind<void (ShmChiplibImpl::*(ShmChiplibImpl*))()>, std::allocator<int>, void ()>::_M_run()::{lambda()#1}, void> >::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#7  0x00007ffff5aa6503 in std::__future_base::_State_baseV2::_M_do_set(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>*, bool*) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#8  0x00007ffff75b6fb3 in __pthread_once_slow (once_control=0x5555571a64e8, init_routine=0x7ffff426d420 <__once_proxy>) at ./nptl/pthread_once.c:116
+#9  0x00007ffff5aa7080 in std::_Function_handler<void (), ThreadPool::enqueue<void (ShmChiplibImpl::*)(), ShmChiplibImpl*>(void (ShmChiplibImpl::*&&)(), ShmChiplibImpl*&&)::{lambda()#1}>::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#10 0x00007ffff5aa86df in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#11 0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#12 0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#13 0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 11 (Thread 0x7ffbdfe006c0 (LWP 9563) "qemu-system-x86"):
+#0  0x00007ffff75ade51 in __futex_abstimed_wait_common64 (private=32767, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5555587dfb48) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=32767, abstime=0x0, clockid=0, expected=0, futex_word=0x5555587dfb48) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5555587dfb48, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ffff75b08cd in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5555587dfaf8, cond=0x5555587dfb20) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=0x5555587dfb20, mutex=0x5555587dfaf8) at ./nptl/pthread_cond_wait.c:627
+#5  0x00007ffff5aa876f in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#8  0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 10 (Thread 0x7ffbdf4006c0 (LWP 9564) "qemu-system-x86"):
+#0  0x00007ffff75ade51 in __futex_abstimed_wait_common64 (private=32767, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5555587dfb48) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=32767, abstime=0x0, clockid=0, expected=0, futex_word=0x5555587dfb48) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5555587dfb48, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ffff75b08cd in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5555587dfaf8, cond=0x5555587dfb20) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=0x5555587dfb20, mutex=0x5555587dfaf8) at ./nptl/pthread_cond_wait.c:627
+#5  0x00007ffff5aa876f in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#8  0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 9 (Thread 0x7ffbdea006c0 (LWP 9565) "qemu-system-x86"):
+#0  0x00007ffff75ade51 in __futex_abstimed_wait_common64 (private=32767, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5555587dfb48) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=32767, abstime=0x0, clockid=0, expected=0, futex_word=0x5555587dfb48) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5555587dfb48, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ffff75b08cd in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5555587dfaf8, cond=0x5555587dfb20) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=0x5555587dfb20, mutex=0x5555587dfaf8) at ./nptl/pthread_cond_wait.c:627
+#5  0x00007ffff5aa876f in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#8  0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 8 (Thread 0x7ff7c5a006c0 (LWP 9571) "qemu-system-x86"):
+#0  0x00007ffff7601bdf in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ff7c59ff4d0, rem=rem@entry=0x0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007ffff760eb27 in __GI___nanosleep (req=req@entry=0x7ff7c59ff4d0, rem=rem@entry=0x0) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00007ffff763e85c in usleep (useconds=<optimized out>) at ../sysdeps/posix/usleep.c:31
+#3  0x00007ffff5aa67b0 in ShmChiplibImpl::CheckAndUpdateHeartBeat() () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#4  0x00007ffff5aa6258 in std::_Function_handler<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> (), std::__future_base::_Task_setter<std::unique_ptr<std::__future_base::_Result<void>, std::__future_base::_Result_base::_Deleter>, std::__future_base::_Task_state<std::_Bind<void (ShmChiplibImpl::*(ShmChiplibImpl*))()>, std::allocator<int>, void ()>::_M_run()::{lambda()#1}, void> >::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#5  0x00007ffff5aa6503 in std::__future_base::_State_baseV2::_M_do_set(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>*, bool*) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff75b6fb3 in __pthread_once_slow (once_control=0x555557194288, init_routine=0x7ffff426d420 <__once_proxy>) at ./nptl/pthread_once.c:116
+#7  0x00007ffff5aa7080 in std::_Function_handler<void (), ThreadPool::enqueue<void (ShmChiplibImpl::*)(), ShmChiplibImpl*>(void (ShmChiplibImpl::*&&)(), ShmChiplibImpl*&&)::{lambda()#1}>::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#8  0x00007ffff5aa86df in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#9  0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#11 0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 7 (Thread 0x7ff7c50006c0 (LWP 9589) "qemu-system-x86"):
+#0  0x00007ffff75ade51 in __futex_abstimed_wait_common64 (private=<optimized out>, cancel=true, abstime=0x0, op=265, expected=0, futex_word=0x7ffff640c000) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=<optimized out>, abstime=0x0, clockid=0, expected=0, futex_word=0x7ffff640c000) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7ffff640c000, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=<optimized out>) at ./nptl/futex-internal.c:139
+#3  0x00007ffff75b9fff in do_futex_wait (sem=sem@entry=0x7ffff640c000, abstime=0x0, clockid=0) at ./nptl/sem_waitcommon.c:111
+#4  0x00007ffff75ba098 in __new_sem_wait_slow64 (sem=0x7ffff640c000, abstime=0x0, clockid=0) at ./nptl/sem_waitcommon.c:183
+#5  0x00007ffff5aa8a90 in ShmChiplibImpl::AcceptUpstreamFuncPayload() () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff5aa6258 in std::_Function_handler<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> (), std::__future_base::_Task_setter<std::unique_ptr<std::__future_base::_Result<void>, std::__future_base::_Result_base::_Deleter>, std::__future_base::_Task_state<std::_Bind<void (ShmChiplibImpl::*(ShmChiplibImpl*))()>, std::allocator<int>, void ()>::_M_run()::{lambda()#1}, void> >::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#7  0x00007ffff5aa6503 in std::__future_base::_State_baseV2::_M_do_set(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>*, bool*) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#8  0x00007ffff75b6fb3 in __pthread_once_slow (once_control=0x5555571740b8, init_routine=0x7ffff426d420 <__once_proxy>) at ./nptl/pthread_once.c:116
+#9  0x00007ffff5aa7080 in std::_Function_handler<void (), ThreadPool::enqueue<void (ShmChiplibImpl::*)(), ShmChiplibImpl*>(void (ShmChiplibImpl::*&&)(), ShmChiplibImpl*&&)::{lambda()#1}>::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#10 0x00007ffff5aa86df in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#11 0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#12 0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#13 0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 6 (Thread 0x7ff7bdc006c0 (LWP 9590) "qemu-system-x86"):
+#0  0x00007ffff75ade51 in __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x555558ff9a50) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x555558ff9a50) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x555558ff9a50, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ffff75b08cd in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x555558ff9a00, cond=0x555558ff9a28) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=0x555558ff9a28, mutex=0x555558ff9a00) at ./nptl/pthread_cond_wait.c:627
+#5  0x00007ffff5aa88bb in ShmChiplibImpl::Irq_handle_thread() () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff5aa6258 in std::_Function_handler<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> (), std::__future_base::_Task_setter<std::unique_ptr<std::__future_base::_Result<void>, std::__future_base::_Result_base::_Deleter>, std::__future_base::_Task_state<std::_Bind<void (ShmChiplibImpl::*(ShmChiplibImpl*))()>, std::allocator<int>, void ()>::_M_run()::{lambda()#1}, void> >::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#7  0x00007ffff5aa6503 in std::__future_base::_State_baseV2::_M_do_set(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>*, bool*) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#8  0x00007ffff75b6fb3 in __pthread_once_slow (once_control=0x555557196a68, init_routine=0x7ffff426d420 <__once_proxy>) at ./nptl/pthread_once.c:116
+#9  0x00007ffff5aa7080 in std::_Function_handler<void (), ThreadPool::enqueue<void (ShmChiplibImpl::*)(), ShmChiplibImpl*>(void (ShmChiplibImpl::*&&)(), ShmChiplibImpl*&&)::{lambda()#1}>::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#10 0x00007ffff5aa86df in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#11 0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#12 0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#13 0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 5 (Thread 0x7ff7bd2006c0 (LWP 9591) "qemu-system-x86"):
+#0  0x00007ffff75ade51 in __futex_abstimed_wait_common64 (private=32767, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x555558ff9bc8) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=32767, abstime=0x0, clockid=0, expected=0, futex_word=0x555558ff9bc8) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x555558ff9bc8, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ffff75b08cd in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x555558ff9b78, cond=0x555558ff9ba0) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=0x555558ff9ba0, mutex=0x555558ff9b78) at ./nptl/pthread_cond_wait.c:627
+#5  0x00007ffff5aa876f in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#8  0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 4 (Thread 0x7ff7b7e006c0 (LWP 9592) "qemu-system-x86"):
+#0  0x00007ffff75ade51 in __futex_abstimed_wait_common64 (private=32767, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x555558ff9bc8) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=32767, abstime=0x0, clockid=0, expected=0, futex_word=0x555558ff9bc8) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x555558ff9bc8, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ffff75b08cd in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x555558ff9b78, cond=0x555558ff9ba0) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=0x555558ff9ba0, mutex=0x555558ff9b78) at ./nptl/pthread_cond_wait.c:627
+#5  0x00007ffff5aa876f in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#8  0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 3 (Thread 0x7ff7b74006c0 (LWP 9593) "qemu-system-x86"):
+#0  0x00007ffff75ade51 in __futex_abstimed_wait_common64 (private=32767, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x555558ff9bc8) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=32767, abstime=0x0, clockid=0, expected=0, futex_word=0x555558ff9bc8) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x555558ff9bc8, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ffff75b08cd in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x555558ff9b78, cond=0x555558ff9ba0) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=0x555558ff9ba0, mutex=0x555558ff9b78) at ./nptl/pthread_cond_wait.c:627
+#5  0x00007ffff5aa876f in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#8  0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 2 (Thread 0x7ff7b4a006c0 (LWP 9599) "qemu-system-x86"):
+#0  0x00007ffff7601bdf in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ff7b49ff4d0, rem=rem@entry=0x0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007ffff760eb27 in __GI___nanosleep (req=req@entry=0x7ff7b49ff4d0, rem=rem@entry=0x0) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00007ffff763e85c in usleep (useconds=<optimized out>) at ../sysdeps/posix/usleep.c:31
+#3  0x00007ffff5aa67b0 in ShmChiplibImpl::CheckAndUpdateHeartBeat() () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#4  0x00007ffff5aa6258 in std::_Function_handler<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> (), std::__future_base::_Task_setter<std::unique_ptr<std::__future_base::_Result<void>, std::__future_base::_Result_base::_Deleter>, std::__future_base::_Task_state<std::_Bind<void (ShmChiplibImpl::*(ShmChiplibImpl*))()>, std::allocator<int>, void ()>::_M_run()::{lambda()#1}, void> >::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#5  0x00007ffff5aa6503 in std::__future_base::_State_baseV2::_M_do_set(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>*, bool*) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#6  0x00007ffff75b6fb3 in __pthread_once_slow (once_control=0x555558ffabf8, init_routine=0x7ffff426d420 <__once_proxy>) at ./nptl/pthread_once.c:116
+#7  0x00007ffff5aa7080 in std::_Function_handler<void (), ThreadPool::enqueue<void (ShmChiplibImpl::*)(), ShmChiplibImpl*>(void (ShmChiplibImpl::*&&)(), ShmChiplibImpl*&&)::{lambda()#1}>::_M_invoke(std::_Any_data const&) () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#8  0x00007ffff5aa86df in ThreadPool::ThreadPool(unsigned long)::{lambda()#1}::operator()() const () at /root/workspace/middlelayer/lib/libvps_chiplib.so
+#9  0x00007ffff426edb4 in ??? () at /lib/x86_64-linux-gnu/libstdc++.so.6
+#10 0x00007ffff75b1b84 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:447
+#11 0x00007ffff763ed6c in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 1 (Thread 0x7ffff6f05e80 (LWP 9540) "qemu-system-x86"):
+#0  0x00007ffff7640e04 in __libc_recvfrom (fd=27, buf=0x55555831f89c, len=1500, flags=0, addr=..., addrlen=0x7fffffffd838) at ../sysdeps/unix/sysv/linux/recvfrom.c:27
+#1  0x00007ffff789b1c3 in ??? () at /lib/x86_64-linux-gnu/libslirp.so.0
+#2  0x00007ffff789be44 in slirp_pollfds_poll () at /lib/x86_64-linux-gnu/libslirp.so.0
+#3  0x0000555555f5cbd7 in notifier_list_notify ()
+#4  0x0000555555f6e579 in main_loop_wait ()
+#5  0x0000555555b347d1 in qemu_main_loop ()
+#6  0x0000555555da5dba in qemu_default_main ()
+#7  0x00007ffff753f1ca in __libc_start_call_main (main=main@entry=0x555555875dc0 <main>, argc=argc@entry=45, argv=argv@entry=0x7fffffffe2d8) at ../sysdeps/nptl/libc_start_call_main.h:58
+#8  0x00007ffff753f28b in __libc_start_main_impl (main=0x555555875dc0 <main>, argc=45, argv=0x7fffffffe2d8, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffe2c8) at ../csu/libc-start.c:360
+#9  0x0000555555877ab5 in _start ()
+[Inferior 1 (process 9540) detached]

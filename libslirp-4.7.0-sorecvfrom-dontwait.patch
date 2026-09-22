@@ -1,0 +1,11 @@
+--- /tmp/socket.c.orig	2026-09-22 20:17:39.928314646 +0800
++++ src/socket.c	2026-09-22 20:17:39.930314595 +0800
+@@ -635,7 +635,7 @@
+         }
+         /* } */
+ 
+-        m->m_len = recvfrom(so->s, m->m_data, len, 0, (struct sockaddr *)&addr,
++        m->m_len = recvfrom(so->s, m->m_data, len, MSG_DONTWAIT, (struct sockaddr *)&addr,
+                             &addrlen);
+         DEBUG_MISC(" did recvfrom %d, errno = %d-%s", m->m_len, errno,
+                    strerror(errno));
